@@ -1,0 +1,24 @@
+.wrap{
+    max-width: 1280px;
+    margin: 0 auto;
+    .navbar{
+        background: #000;
+        a{
+            text-decoration: none;
+            h1{
+                color:red;
+                font-size: $font-s;
+                font-family: $font-family-base;
+            }
+        }
+        .menu{
+            display: flex;
+            li>a{
+                padding: 5px 10px;
+            }
+        }
+    }
+
+
+
+}
