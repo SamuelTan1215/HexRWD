@@ -53,7 +53,8 @@ table {
 }
 
 *, *::before, *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 img {
@@ -62,144 +63,220 @@ img {
 }
 
 /* CSS RESET END */
-a:hover {
-  color: blue;
+/*全域設定*/
+body{
+  font-family: "MicrosoftJhengHeiRegular","Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
 }
 
-/*!
-Pure v3.0.0
-Copyright 2013 Yahoo!
-Licensed under the BSD License.
-https://github.com/pure-css/pure/blob/master/LICENSE
-*/
-.pure-button {
-  /* Structure */
-  display: inline-block;
-  line-height: normal;
-  white-space: nowrap;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-       user-select: none;
-  box-sizing: border-box;
-}
-
-/* Firefox: Get rid of the inner focus border */
-.pure-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-/* Inherit .pure-g styles */
-.pure-button-group {
-  letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
-  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-}
-
-.opera-only :-o-prefocus,
-.pure-button-group {
-  word-spacing: -0.43em;
-}
-
-.pure-button-group .pure-button {
-  letter-spacing: normal;
-  word-spacing: normal;
-  vertical-align: top;
-  text-rendering: auto;
-}
-
-/*csslint outline-none:false*/
-.pure-button {
-  font-family: inherit;
-  font-size: 100%;
-  padding: 0.5em 1em;
-  color: rgba(0, 0, 0, 0.8);
-  border: none rgba(0, 0, 0, 0);
-  background-color: #E6E6E6;
+a{
   text-decoration: none;
-  border-radius: 2px;
 }
 
-.pure-button-hover,
-.pure-button:hover,
-.pure-button:focus {
-  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
-}
 
-.pure-button:focus {
-  outline: 0;
-}
 
-.pure-button-active,
-.pure-button:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-  border-color: #000;
-}
-
-.pure-button[disabled],
-.pure-button-disabled,
-.pure-button-disabled:hover,
-.pure-button-disabled:focus,
-.pure-button-disabled:active {
-  border: none;
-  background-image: none;
-  opacity: 0.4;
-  cursor: not-allowed;
-  box-shadow: none;
-  pointer-events: none;
-}
-
-.pure-button-hidden {
-  display: none;
-}
-
-.pure-button-primary,
-.pure-button-selected,
-a.pure-button-primary,
-a.pure-button-selected {
-  background-color: rgb(0, 120, 231);
-  color: #fff;
-}
-
-/* Button Groups */
-.pure-button-group .pure-button {
-  margin: 0;
-  border-radius: 0;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.pure-button-group .pure-button:first-child {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-
-.pure-button-group .pure-button:last-child {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-right: none;
-}
 
 .wrap {
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
+  position: relative;
+  border:1px solid black;
 }
-.wrap .navbar {
+.wrap .header {
+  position: absolute;
+  top: 0px;
+  height: 56px;
   background: #000;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px;
+  opacity: 0.7;
 }
-.wrap .navbar a {
-  text-decoration: none;
+
+.wrap .header .title h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;   
+  
 }
-.wrap .navbar a h1 {
-  color: red;
-  font-size: 13px;
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
-}
-.wrap .navbar .menu {
+
+.wrap .header .menu {
   display: flex;
 }
-.wrap .navbar .menu li > a {
-  padding: 5px 10px;
-}/*# sourceMappingURL=all.css.map */
+
+.wrap .header .menu> li > a {
+  padding: 12px 10px;
+  color: white;
+  
+}
+.banner{
+  background-image:url("../images/header_desktop.png") ;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  max-width: 1024px;
+  height: 420px;
+  border: 1px solid black;
+  
+}
+.banner-content{
+  padding: 15px;
+  text-align: center;
+  background: black;
+  opacity: 0.6;
+  color:white;
+  position: absolute;
+  top:17%;
+  right: 30%;
+  
+
+}
+.banner-content h2{
+  margin-bottom: 0.5em;
+  font-size: 36px;
+}
+.banner-content p{
+  margin-bottom: 0.5em;
+
+}
+.content-index{
+  padding: 2em;
+  color: #3D1101 ;
+}
+.content-index-title{
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  
+}
+.content-index-feature{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 2em;
+  
+}
+.content-index-feature li{
+  width: 30%;
+  
+}
+.content-index-feature li h4{
+  text-align: center;
+  margin-bottom: 1em;
+
+}
+.content-index-feature li img{
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1em;
+  
+}
+.content-index-feature li p{
+  text-align: left;
+  line-height: 1.2;
+}
+.content-index-chef{
+  max-width: 1024px;
+  background: #3D1101 100%;
+  display: flex;
+}
+.content-index-chef-text{
+  color:white;
+  padding: 80px 30px;
+  line-height: 1.3;
+  
+}
+.content-index-chef-text h4{
+  margin-bottom: 1em;
+  letter-spacing: 0.1em;
+}
+.content-index-feedback{
+  padding: 2em 1em;
+}
+.content-index-feedback h3{
+  text-align: center;
+  font-size: 24px;
+  color: #3D1101;
+  margin-bottom: 1em;
+}
+.content-index-feedback-list{
+  display: flex;
+  max-width: 1024px;
+
+}
+.content-index-feedback-list>li{
+  display: flex;
+  justify-content:space-around;
+  width: 50%;
+  margin-right: 3%;
+  
+
+}
+
+.content-index-feedback-img img{
+  border-radius:50%;
+  
+}
+.content-index-feedback-text p{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.feedback-text-end{
+  text-align: right;
+}
+
+.booking h3{
+  text-align: center;
+}
+.booking-content{
+  margin: 1em 0;
+  display: flex;
+
+}
+.booking-map{
+  margin-right: 2em;
+}
+.booking-form{
+  text-align: left;
+}
+.booking-form label,input{
+  margin-bottom: 1em;
+  border: 1px solid black;
+  
+}
+.booking-form-button{
+  text-align: right;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0.5em 2em 1.5em;
+  line-height: 1.2;
+}
+.hex-info{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.hex-about{
+  width: 50%;
+  margin-right: 10%;
+}
+.hex-about h4{
+  margin-bottom: 1em;
+  font-size: 24px;
+}
+.hex-contact{
+  width: 40%;
+}
+.hex-contact h4{
+  margin-bottom: 1em;
+  font-size: 24px;
+}
+.hex-contact ul li{
+  list-style: disc;
+}
