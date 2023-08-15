@@ -61,12 +61,6 @@ img{
   max-width: 100%;
   height: auto;
 }
-/*
-1.png 背景
-2.banner content 概念不穩定
-3.content-index-feedback img 太小？
-*/
-
 /* CSS RESET END */
 
 /*全域設定*/
@@ -75,10 +69,8 @@ body{
   font-size: 16px;
   color: black;
 }
-
 a{
   text-decoration: none;
-  
 }
 
 
@@ -88,6 +80,7 @@ a{
 
 
 /*全域設定END*/
+
 
 .wrap{
   max-width: 1024px ;
@@ -102,7 +95,7 @@ a{
   display: flex; 
   justify-content: space-between;
   align-items: center;
-  width: 100%;/*為什麼要寫w100*/
+  width: 100%;
   background-color: #000;
   padding: 16px 20px;
   opacity: 0.7;
@@ -132,11 +125,14 @@ a{
 .showmenu{
   display: none;
   color: white;
-  font-size: 28px;/*ham icon 設定為28px*/
+  font-size: 28px;/*hamburger icon 設定為28px*/
 }
 
 
 @media (max-width: 766px){
+  .header{
+      opacity: 0.9;
+  }
   .menu {
     /*隱藏選單*/
     /*將元素的高度設定為0px,0px以外的區域都被hidden隱藏元素*/
@@ -147,17 +143,18 @@ a{
     /*絕對定位疊在網頁上*/
     position: absolute;
     z-index: 2;
-    /*header 60px 如果沒有寫60px 就會覆蓋header*/
+    /*header本身高度是60px 如果沒有寫60px 就會覆蓋header*/
     top: 60px;
     left: 0;    
     right: 0;
     flex-direction: column;
     display: block;
     text-align: center;   
-    background-color: #000;/*為什麼是透明的*/
+    background-color: #000;
   }
   .menu li a{
     border-bottom: 2px solid white;
+    display: block;
   }
   .showmenu{
     display: block;
@@ -167,12 +164,9 @@ a{
     max-height: 500px;
   }
     
-
 }
 
-
 /*header end*/
-
 
 .banner{
   width: 100%;
@@ -183,7 +177,6 @@ a{
   background-position: center center;
   background-color: black;/*如果圖片太慢載入，用背景黑色打底*/
   position: relative; 
-  
 }
 
 .banner-content{
@@ -271,7 +264,6 @@ a{
   .content-index-feature li p{
     line-height: 1.15;
   }
-
 } 
 
 @media (max-width: 766px) {
@@ -283,6 +275,7 @@ a{
     margin-bottom: 2em;
   }
 }
+
 /*content-index-feature end*/
 
 .content-index-chef{
@@ -330,6 +323,10 @@ a{
   .content-index-chef-img{
     width: 100%;
     margin-bottom: 2em;
+    display: flex;
+  }
+  .content-index-chef-img img{
+    margin: 0 auto;/*原本下m0-a沒有用處，但是在父層寫了flex，就生效了？是否有其他適合的做法置中呢？*/
   }
   .content-index-chef-text{
     width: 100%;
@@ -397,9 +394,7 @@ a{
 @media (max-width:766px) {
   .content-index-feedback-list>li{
     width: 100%;
-    
   }
-
 }
 
 /*content-index-feedback end*/
@@ -495,8 +490,11 @@ a{
   .booking-map{
     width: 100%;
     margin-bottom: 1em;
+    display: flex;
   }
-  
+  .booking-map img{
+    margin: 0 auto;
+  }
   .booking-form{
     width: 100%;
   }
@@ -828,11 +826,16 @@ a{
 }
 
 .pure-form.pure-form-stacked{
+  width: 100%;
   border-top: 4px solid #FF5E45;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); ;
   box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
   padding: 6px 12px;
+}
+
+.pure-form.pure-form-stacked fieldset{
+  width: 100%;
 }
 
 .pure-form.pure-form-stacked legend{
@@ -842,6 +845,20 @@ a{
   font-family: NotoSansCJKtc-Black;
   background: #EFE9E7;
   box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+}
+
+.use-fw{
+  position: relative;
+}
+
+.use-fw i{
+  position: absolute;
+  top: 35px;
+  left: 5px;
+}
+
+.use-fw .content-login-form-input{
+  text-indent: 20px;
 }
 
 .forget-password{
@@ -859,7 +876,14 @@ a{
   margin: 1em 0;
 }
 
-.pure-button.pure-button-primary.gray-btn{
+.content-login .content-login-form .pure-button.pure-button-primary.register-btn{
+  display: inline-block;
+  background-color: gray ;
+  width: 40%;/*寫了width 40%,加起來剛好100%，為什麼會破版沒有在同一排，？*/
+  margin:0 5%;
+  border-radius: 4px;
+}
+.content-login .content-login-form .pure-button.pure-button-primary.login-btn{
   display: inline-block;
   background-color: gray ;
   width: 40%;
@@ -867,29 +891,7 @@ a{
   border-radius: 4px;
 }
 
-.pure-button.pure-button-primary.orange-btn{
-  background-color: #F56C23;
-  width: 40%;
-  border-radius: 4px;
-  
-}
-
-.use-fw{
-  position: relative;
-}
-
-.use-fw i{
-  position: absolute;
-  top: 35px;
-  left: 5px;
-}
-
-.use-fw .content-login-form-input{
-  text-indent: 20px;
-}
-
 /*login end*/
-
 
 .content-register{
   padding: 40px 0;
@@ -916,11 +918,9 @@ a{
   font-weight: 600;
   text-align: center;
   margin-bottom: 1em;
-  
 }
 
 .content-register-form .pure-form.pure-form-stacked{
-
   border-top: 4px solid #FF5E45;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); ;
@@ -973,12 +973,10 @@ a{
   margin: 1em 0;
 }
 
-
 .pure-button.pure-button-primary.orange-btn{
   background-color: #F56C23;
   width: 40%;
   border-radius: 4px;
-  
 }
 
 .use-fw{
@@ -1009,9 +1007,6 @@ a{
   text-indent: 20px;
 }
 @media (max-width:766px){
-  .content-register-form .pure-form.pure-form-stacked{
-    padding: ;
-  }
   .term{
     width: 75%;
     margin-bottom: 2em;
