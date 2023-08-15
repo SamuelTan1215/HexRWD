@@ -1,0 +1,99 @@
+/*!
+Pure v0.6.0
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-button {
+    /* Structure */
+    display: inline-block;/*將按鈕元素設定為行內塊級元素，使其保持文本的性質，同時有塊級元素的特性。*/
+    zoom: 1;/*在IE中修復該瀏覽器對 inline-block 元素的處理方式，以確保按鈕元素正確顯示。*/
+    line-height: normal;/*設定行高，以確保按鈕內容垂直居中。*/
+    white-space: nowrap;/*禁止按鈕內容的自動換行，確保按鈕內容在一行上顯示*/
+    vertical-align: middle;/*將按鈕元素垂直居中對齊*/
+    text-align: center;/*將按鈕內容水平居中對齊*/
+    cursor: pointer;/* 將滑鼠游標設定為指示可以點擊的手型游標*/
+    -webkit-user-drag: none;/*chrome,safari...*/
+    -webkit-user-select: none;
+    -moz-user-select: none;/*firefox*/
+    -ms-user-select: none;/*ie*/
+    user-select: none;/* 禁止文字的選擇，以防止使用者選擇按鈕中的文字內容*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;/*設定盒子模型為border-box，這使元素的寬度和高度包括內邊距和邊框，不包括外邊距*/
+}
+/*設定按鈕的基本結構和外觀行為都保持一致*/
+/* Firefox: Get rid of the inner focus border
+ 設定 Mozilla Firefox 瀏覽器的按鈕元素內部焦點的樣式，取消內部焦點的預設樣式*/
+.pure-button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+/*csslint outline-none:false*/
+
+.pure-button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.10));
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+.pure-button:focus {
+    outline: 0;
+}
+.pure-button-active,
+.pure-button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+    border-color: #000\9;
+}
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+    border: none;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.pure-button-hidden {
+    display: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.pure-button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+    background-color: rgb(0, 120, 231);
+    color: #fff;
+}

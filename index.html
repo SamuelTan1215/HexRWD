@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>六角學院RWD作業</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/all.css">
+    
 </head>
-<body>
+<body>      
     <div class="wrap">
         <div class="header">
-            <a class="title" href="#">
-                <h1>六角西餐廳</h1>
-            </a>
+            <a class="title" href="#"><h1>六角西餐廳</h1></a>
             <ul class="menu">
-                <li><a href="#">特色</a></li>
-                <li><a href="#">主廚</a></li>
-                <li><a href="#">地圖</a></li>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="login.html">登入</a></li>
+                <li><a href="cart.html">購物車</a></li>
             </ul>
+            <a href="#" class="showmenu"><i class="fa-solid fa-bars"></i></a>
         </div>
+        <!--header end-->
         <div class="banner">
             <div class="banner-content">
                 <h2>咬一口就無法忘懷的漢堡</h2>
                 <p>七夕絕對無法錯過的好滋味</p>
-                <p>六角大漢堡</p>
+                <span class='fas fa-utensils'></span>六角大漢堡<span class='fas fa-utensils'></span>
             </div>   
         </div>
+
         <div class="content-index">
             <h3 class="content-index-title">
                 客人總是詢問
@@ -51,8 +54,11 @@
                             lorem leo, vehicula at nibh quis, facilisis accumsan turpis.</p>
                     </li>
                 </ul>
+
                 <div class="content-index-chef">
-                    <img src="images/main_chef_brown.png" alt="主廚個人照">
+                    <div class="content-index-chef-img">
+                        <img width="460px" height="460px" src="images/main_chef_brown.png" alt="主廚個人照">
+                    </div>
                     <div class="content-index-chef-text">
                         <h4>
                             今日主廚：帕金森、梅在帕
@@ -84,7 +90,7 @@
                                 <p>
                                     自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
                                 </p>
-                                <p class="feedback-text-end">--產品經理</p>
+                                <p class="feedback-text-end">-- 產品經理</p>
                             </div>
                         </li>
                         <li>
@@ -96,7 +102,7 @@
                                 <p>
                                     自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
                                 </p>
-                                <p class="feedback-text-end">--金身道士</p>
+                                <p class="feedback-text-end">-- 金身道士</p>
                             </div>
                         </li>
                         <li>
@@ -108,11 +114,12 @@
                                 <p>
                                     自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
                                 </p>
-                                <p class="feedback-text-end">--美麗萬分</p>
+                                <p class="feedback-text-end">-- 美麗萬分</p>
                                 </div>
                         </li>
                     </ul>
                 </div>
+
                 <div class="booking">
                     <h3>我們的位置不太夠坐
                         <br>
@@ -120,25 +127,30 @@
                     </h3>
                     <div class="booking-content">
                         <div class="booking-map">
-                            <img src="images/Map.png" alt="六角地圖">
+                            <img src="images/Map.png" alt="六角地圖" width="462px" height="388px">
                         </div>
                         <div class="booking-form">
                             <form action="index.html">
                                 <label for="person">姓名</label><br>
-                                <input id="person" type="text" placeholder="請輸入姓名" name="person">
+                                <input id="person" type="text" required="required" placeholder="請輸入姓名" name="person">
                                 <br>
                                 <label for="tel">電話</label><br>
-                                <input id="tel" type="tel" placeholder="02-1234567" name="tel">
+                                <input id="tel" type="tel" required="required" maxlength="10" pattern="09\d{2}\d{6}" placeholder="02-1234567" name="tel">
                                 <br>
                                 <label for="mail">信箱</label><br>
-                                <input id="mail" type="email" placeholder="請輸入電子郵件"  name="mail">
+                                <input id="mail" type="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="請輸入電子郵件"  name="mail">
                                 <br>
                                 <label for="peoplenum">人數</label><br>
                                 <input id="peoplenum" type="number" placeholder="用餐人數"  name="peoplenum">
                                 <br>
+                                
+                                <p>是否需要素食</p>
+                                <input type="radio" name="choice" value="yes">是
+                                <input type="radio" name="choice" value="no">否
                                 <div class="booking-form-button">
-                                    <input type="submit" class="btn-submit" value="送出">
                                     <input type="button" class="btn-cancel" value="取消">
+                                    <input type="submit" class="btn-submit" value="送出">
+                                    
                                 </div>
                             </form>		 
                         </div>
@@ -150,7 +162,7 @@
         <div class="footer">
             <div class="hex-info">
                 <div class="hex-about">
-                    <h4>關於六角西餐廳</h4>
+                    <h4>關於 六角西餐廳</h4>
                     <p>
                         Curabitur lobortis id lorem id bibndum. Ut id consectetur magna.
                         Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.
@@ -159,13 +171,12 @@
                 <div class="hex-contact">
                     <h4>聯絡方式</h4>
                     <ul>
-                        <li><p>高雄市中正五路到底</p></li>
+                        <li><p>• 高雄市中正五路到底</p></li>
                         <li>
-                            <p>+886 886 886 </p>
+                            <p>• +886 886 886 </p>
                         </li>
                         <li>
-                            <p>mailto:service@hexschool.com</p>
-                            <p>service@hexschool.com</p>
+                            <p>• service@hexschool.com</p>
                         </li>
                     </ul>
                 </div>
@@ -173,23 +184,22 @@
             
             <div class="hex-logo">
                 <div class="hex-logo-title">
-                    <img src="images/logo_w.png" alt="六角表尾logo">
+                    <img src="images/logo_l(null).svg" alt="六角表尾logo">
                 </div>
                 <div class="hex-social">
-                    font awesome
-                </div>
+                    <i class="fa-brands fa-square-google-plus google"></i>
+                    <i class="fa-brands fa-square-twitter twitter"></i>
+                    <i class="fa-brands fa-square-facebook facebook"></i>
+                    
+                </div>      
             </div>
         </div>
-
-
-
-
 
 
     </div>
 
 
-
+    <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/all.js"></script>
 </body>
 </html>
